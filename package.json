@@ -11,7 +11,7 @@
     "db-migrate": "^0.11.6",
     "db-migrate-pg": "^1.0.0",
     "express-useragent": "^1.0.4",
-    "fs-extra": "^1.0.0",
+    "fs-extra": "^9.0.1",
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "~1.0.0",
     "grunt-contrib-coffee": "~1.0.0",

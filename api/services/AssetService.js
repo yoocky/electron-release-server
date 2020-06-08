@@ -11,12 +11,13 @@ var crypto = require('crypto');
 var Promise = require('bluebird');
 
 var SkipperDisk = require('skipper-disk');
-
+var path = require('path');
 var AssetService = {};
+
 
 AssetService.serveFile = function(req, res, asset) {
   // Stream the file to the user
-  fsx.createReadStream(asset.fd)
+  fsx.createReadStream(path.resolve(__dirname, `../../.tmp/uploads/${asset.fd}`))
     .on('error', function(err) {
       res.serverError('An error occurred while accessing asset.', err);
       sails.log.error('Unable to access asset:', asset.fd);
@@ -24,7 +25,7 @@ AssetService.serveFile = function(req, res, asset) {
     .on('open', function() {
       // Send file properties in header
       res.setHeader(
-        'Content-Disposition', 'attachment; filename="' + asset.name + '"'
+        'Content-Disposition', 'attachment; filename=' + encodeURI(asset.name)
       );
       res.setHeader('Content-Length', asset.size);
       res.setHeader('Content-Type', mime.lookup(asset.fd));
@@ -76,8 +77,7 @@ AssetService.getHash = function(fd, type = 'sha1') {
 
     var hash = crypto.createHash(type);
     hash.setEncoding('hex');
-
-    fsx.createReadStream(fd)
+    fsx.createReadStream(path.resolve(__dirname, `../../.tmp/uploads/${fd}`))
       .on('error', function(err) {
         reject(err);
       })

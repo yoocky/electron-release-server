@@ -32,7 +32,7 @@ If you want to use nginx as web-server:
 
 ```nginx
 server {
-    listen       80;
+    listen       8080;
     server_name  download.yourdomain.com;
 
     location / {

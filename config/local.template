@@ -116,7 +116,7 @@ module.exports = {
    * Otherwise it falls back to port 1337.                                   *
    *                                                                         *
    * In env/production.js, you'll probably want to change this setting       *
-   * to 80 (http://) or 443 (https://) if you have an SSL certificate        *
+   * to 8080 (http://) or 443 (https://) if you have an SSL certificate        *
    ***************************************************************************/
 
   // port: process.env.PORT || 1337,

@@ -23,7 +23,7 @@ module.exports = {
   },
 
   /***************************************************************************
-   * Set the port in the production environment to 80                        *
+   * Set the port in the production environment to 8080                        *
    ***************************************************************************/
 
   port: 5014,
