@@ -28,6 +28,7 @@
     "grunt-sync": "~0.6.2",
     "grunt-wiredep": "^3.0.1",
     "include-all": "~2.0.0",
+    "sails-mysql": "0.12.2",
     "jsonwebtoken": "^7.2.1",
     "ldapauth-fork": "^2.5.4",
     "lodash": "^4.17.2",
