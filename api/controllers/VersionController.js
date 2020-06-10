@@ -7,11 +7,12 @@
 
 var actionUtil = require('sails/lib/hooks/blueprints/actionUtil');
 var url = require('url');
+var moment = require('moment');
 var Promise = require('bluebird');
 var semver = require('semver');
 var compareVersions = require('compare-versions');
 
-const availabilityFilter = () => ({ '<=': (new Date()).toISOString() });
+const availabilityFilter = () => ({ '<=': moment().format('YYYY-MM-DD HH:mm:ss') });
 
 module.exports = {
 
